@@ -4,12 +4,12 @@ module fetch(pc, ins);
   output [31:0] ins;
   reg [31:0] ins_mem [0:255];
   initial
-    $readmemb("sample.bnr", ins_mem[0:255]);
+    $readmemb("sample.bnr",ins_mem);
   assign ins = ins_mem[pc];
 endmodule
 
 module tfetch;
-  reg clk, rst;
+  reg clk, rstd;
   reg [31:0] pc;
   wire [31:0] ins;
 
@@ -19,12 +19,12 @@ end
 
 initial begin
   rstd = 1;
-  #10 rst = 0;
-  #20 rst = 1;
+  #10 rstd = 0;
+  #20 rstd = 1;
 end
 
-always @ (negedge rst or posedge clk) begin
-  if (rst == 0) pc <= 0;
+always @ (negedge rstd or posedge clk) begin
+  if (rstd == 0) pc <= 0;
   else if (clk == 1) pc <= pc + 1;
 end
 
