@@ -18,15 +18,15 @@ input [4:0] operation;
 endfunction
 
 initial begin
-       op = 6'd0:operation = 5'd0:opr=opr_gen(op, operation);
-  #100 op = 6'd0:operation = 5'd8:opr=opr_gen(op, operation);
-  #100 op = 6'd0:operation = 5'd11:opr=opr_gen(op, operation);
-  #100 op = 6'd1:operation = 5'd0:opr=opr_gen(op, operation);
-  #100 op = 6'd4:operation = 5'd3:opr=opr_gen(op, operation);
-  #100 op = 6'd5:operation = 5'd9:opr=opr_gen(op, operation);
-  #100 op = 6'd6:operation = 5'd11:opr=opr_gen(op, operation);
-  #100 op = 6'd2:operation = 5'd0:opr=opr_gen(op, operation);
-  #100 op = 6'd10:operation = 5'd11:opr=opr_gen(op, operation);
+       op = 6'd0;operation = 5'd0;opr=opr_gen(op, operation);
+  #100 op = 6'd0;operation = 5'd8;opr=opr_gen(op, operation);
+  #100 op = 6'd0;operation = 5'd11;opr=opr_gen(op, operation);
+  #100 op = 6'd1;operation = 5'd0;opr=opr_gen(op, operation);
+  #100 op = 6'd4;operation = 5'd3;opr=opr_gen(op, operation);
+  #100 op = 6'd5;operation = 5'd9;opr=opr_gen(op, operation);
+  #100 op = 6'd6;operation = 5'd11;opr=opr_gen(op, operation);
+  #100 op = 6'd2;operation = 5'd0;opr=opr_gen(op, operation);
+  #100 op = 6'd10;operation = 5'd11;opr=opr_gen(op, operation);
 end
 
 initial begin

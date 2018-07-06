@@ -9,8 +9,8 @@ module reg_file(clk, rstd, wr, ra1, ra2, wa, wren, rr1, rr2);
   assign rr2 = rf[ra2];
   always @(negedge rstd or posedge clk)
     begin
-      if (rstd == 0) pc <= 32'h00000000;
-      else if (wren == 0) rf [wa] <= ra;
+      if (rstd == 0) rf[0] <= 32'h00000000;
+      else if (wren == 0) rf [wa] <= wr;
     end
 endmodule
 

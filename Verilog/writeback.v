@@ -1,4 +1,4 @@
-module writeback(clk, rstd, ins, nextpc, result, wra, pc);
+module writeback(clk, rstd,nextpc,pc);
   input clk, rstd;
   input [31:0] nextpc;
   output [31:0] pc;

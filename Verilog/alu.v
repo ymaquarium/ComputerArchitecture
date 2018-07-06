@@ -1,5 +1,5 @@
 module test_alu;
-reg [4:0] operation, shift;
+reg [4:0] operation, shift, opr;
 reg [31:0] operand1, operand2, result;
 
 
@@ -8,7 +8,7 @@ input [4:0] opr, shift;
 input [31:0] operand1, operand2;
   case (opr)
     5'd0:alu = operand1 + operand2;
-    5'd2:alu = operand1 - operand2;
+    5'd2:alu = operand1 + operand2;
     5'd8:alu = operand1 & operand2;
     5'd9:alu = operand1 | operand2;
     5'd10:alu = operand1 ^ operand2;
@@ -76,7 +76,7 @@ initial begin
 end
 
 initial begin
-  $monitor($stime, "op = %h, shift = %h, op2 = %h, result = %h", opr, shift, operand1, operand2, result);
+  $monitor($stime, "op = %h, shift = %h, op1 = %h, op2 = %h, result = %h", opr, shift, operand1, operand2, result);
 end
 
 endmodule

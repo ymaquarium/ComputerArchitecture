@@ -1,10 +1,10 @@
-//命令フェッチ
 module fetch(pc, ins);
   input [31:0] pc;
   output [31:0] ins;
   reg [31:0] ins_mem [0:255];
+  
   initial
-    $readmemb("sample.bnr",ins_mem);
+    $readmemb("sample.bnr", ins_mem);
   assign ins = ins_mem[pc];
 endmodule
 
@@ -14,7 +14,7 @@ module tfetch;
   wire [31:0] ins;
 
 initial begin
-  clk = 0; forever #50 clk = !clk;
+  clk = 0; forever #50 clk=!clk;
 end
 
 initial begin

@@ -1,12 +1,12 @@
 module data_mem(address, clk, write_data, wren, read_data);
-  input [7;0] address;
+  input [7:0] address;
   input clk, wren;
   input [7:0] write_data;
   output [7:0] read_data;
   reg [7:0] d_mem[0:255];
 
   always @ (posedge clk)
-    if (wren == 0) d_mem [addres] <= write_data;
+    if (wren == 0) d_mem [address] <= write_data;
   assign read_data = d_mem[address];
 endmodule
 
@@ -17,7 +17,7 @@ module test_mem;
   wire [31:0] read_data;
 
   initial begin
-    clk = 0; forever #50 clk = ~clk;
+    clk = 0; forever #50 clk=~clk;
   end
 
   initial begin
@@ -33,7 +33,7 @@ module test_mem;
   end
 
   initial begin
-    $monitor($stime, "addres = %d, clk = %d, write_data = %h, wren = %d, read_data = %h", address, clk, write_data, read_data);
+    $monitor($stime, "address = %d, clk = %d, write_data = %h, wren = %d, read_data = %h", address, clk, write_data, wren, read_data);
   end
   data_mem data_mem_body(address, clk, write_data, wren, read_data);
 endmodule
