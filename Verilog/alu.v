@@ -8,7 +8,7 @@ input [4:0] opr, shift;
 input [31:0] operand1, operand2;
   case (opr)
     5'd0:alu = operand1 + operand2;
-    5'd2:alu = operand1 + operand2;
+    5'd2:alu = operand1 - operand2;
     5'd8:alu = operand1 & operand2;
     5'd9:alu = operand1 | operand2;
     5'd10:alu = operand1 ^ operand2;
